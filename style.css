@@ -2,7 +2,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 /* Configuramos el grid en el body */
@@ -14,46 +16,85 @@ body {
         "header header header"
         "nav article aside"
         "footer footer footer";
-    height: 100vh;
+    min-height: 100vh;
+    gap: 10px; /* Espacio entre las áreas */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Estilo para cada sección */
 header {
     grid-area: header;
-    background-color: #f8f8f8;
+    background-color: #4a90e2;
     padding: 20px;
     text-align: center;
-    border: 1px solid #ddd;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
+/* Estilo para el nav */
 nav {
     grid-area: nav;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
     padding: 20px;
     border-right: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
+/* Efecto hover en el nav */
+nav:hover {
+    transform: translateX(-5px); /* Movimiento sutil */
+}
+
+/* Estilo para el article */
 article {
     grid-area: article;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
+    transition: transform 0.3s ease;
 }
 
+/* Efecto hover en el article */
+article:hover {
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo para el aside */
 aside {
     grid-area: aside;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
     padding: 20px;
     border-left: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
+/* Efecto hover en el aside */
+aside:hover {
+    transform: translateX(5px); /* Movimiento sutil */
+}
+
+/* Estilo para el footer */
 footer {
     grid-area: footer;
-    background-color: #f8f8f8;
+    background-color: #4a90e2;
     padding: 20px;
     text-align: center;
-    border-top: 1px solid #ddd;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Para pantallas pequeñas, hacemos que el diseño sea más vertical */
@@ -64,4 +105,13 @@ footer {
             "header"
             "nav"
             "article"
-        }}
+            "aside"
+            "footer";
+    }
+    nav, article, aside {
+        border-right: none;
+        border-left: none;
+        box-shadow: none;
+    }
+}
+
