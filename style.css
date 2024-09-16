@@ -1,117 +1,57 @@
-/* Estilos generales */
-body {
-    margin: 0;
-    padding: 0;
+/* Estilos específicos para index.html */
+.index-body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
-/* Configuramos el grid en el body */
-body {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /* 1 parte para nav y aside, 3 partes para article */
-    grid-template-rows: auto 1fr auto;  /* header y footer tamaño automático */
-    grid-template-areas:
-        "header header header"
-        "nav article aside"
-        "footer footer footer";
-    min-height: 100vh;
-    gap: 10px; /* Espacio entre las áreas */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Estilo para cada sección */
-header {
-    grid-area: header;
-    background-color: #4a90e2;
-    padding: 20px;
+.index-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
     text-align: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
-/* Estilo para el nav */
-nav {
-    grid-area: nav;
-    background-color: #ffffff;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+header h1 {
+    font-size: 32px;
+    color: #4a90e2;
+    margin-bottom: 20px;
 }
 
-/* Efecto hover en el nav */
-nav:hover {
-    transform: translateX(-5px); /* Movimiento sutil */
-}
-
-/* Estilo para el article */
-article {
-    grid-area: article;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    transition: transform 0.3s ease;
-}
-
-/* Efecto hover en el article */
-article:hover {
-    transform: scale(1.02); /* Aumenta ligeramente el tamaño */
-}
-
-/* Estilo para el aside */
-aside {
-    grid-area: aside;
-    background-color: #ffffff;
-    padding: 20px;
-    border-left: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-/* Efecto hover en el aside */
-aside:hover {
-    transform: translateX(5px); /* Movimiento sutil */
-}
-
-/* Estilo para el footer */
-footer {
-    grid-area: footer;
-    background-color: #4a90e2;
-    padding: 20px;
-    text-align: center;
-    color: white;
+p {
     font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.links a {
+    display: block;
+    margin: 10px 0;
+    padding: 12px 0;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
     border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Para pantallas pequeñas, hacemos que el diseño sea más vertical */
-@media (max-width: 600px) {
-    body {
-        grid-template-columns: 1fr; /* Una columna */
-        grid-template-areas:
-            "header"
-            "nav"
-            "article"
-            "aside"
-            "footer";
-    }
-    nav, article, aside {
-        border-right: none;
-        border-left: none;
-        box-shadow: none;
-    }
+.links a:hover {
+    background-color: #357ab8;
+    transform: translateY(-3px);
 }
 
+footer p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
